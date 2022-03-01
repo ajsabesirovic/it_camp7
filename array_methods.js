@@ -80,6 +80,9 @@ const fruits = ["Banana", "Orange", "Apple", "Mango"];
 //   console.log(fruits[i]);
 // }
 
-for (let i of fruits) {
-  console.log(i);
-}
+// for (let i of fruits) {
+//   console.log(i);
+// }
+
+// fruits.splice(1, 2);
+// console.log(fruits);
