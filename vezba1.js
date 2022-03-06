@@ -4,8 +4,8 @@
 // num --
 // console.log(num)
 
-broj1 = 10;
-broj2 = 6;
+// broj1 = 10;
+// broj2 = 6;
 // console.log(broj1 === broj2)
 
 // broj1 > 5
