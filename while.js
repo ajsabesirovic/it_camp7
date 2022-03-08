@@ -40,7 +40,8 @@
 // let i = 10;
 // do {
 //   console.log("HEY");
-// } while (i < 15);
+//   i++;
+// } while (i < 13);
 // do {
 //   text += "The number is " + i;
 //   i++;
