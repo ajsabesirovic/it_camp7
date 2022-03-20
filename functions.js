@@ -106,21 +106,54 @@
 
 // console.log(niz);
 
-function identityMatrix(a) {
-  for (let i = 0; i < a.length; i++) {
-    for (let j = 0; j < a[i].length; j++) {
-      if ((i === j && a[i][j] !== 1) || (i !== j && a[i][j] !== 0)) {
-        return false;
-      }
-    }
+// function identityMatrix(a) {
+//   for (let i = 0; i < a.length; i++) {
+//     for (let j = 0; j < a[i].length; j++) {
+//       if ((i === j && a[i][j] !== 1) || (i !== j && a[i][j] !== 0)) {
+//         return false;
+//       }
+//     }
+//   }
+//   return true;
+// }
+
+// console.log(
+//   identityMatrix([
+//     [1, 0, 0],
+//     [0, 1, 0],
+//     [0, 0, 1],
+//   ])
+// );
+
+function rowSum(row) {
+  sumRow = 0;
+  for (let i = 0; i < row.length; i++) {
+    sumRow += row[i];
   }
-  return true;
+  return sumRow;
 }
 
+const orderBySum = (someArray) => {
+  let result = [];
+  for (let i = 0; i < someArray.length; i++) {
+    let min = rowSum(someArray[i]);
+    for (let j = i + 1; j < someArray.length; j++) {
+      let rs = rowSum(someArray[j]);
+      if (rs < min) {
+        min = rs;
+      }
+      result.push(min);
+    }
+  }
+  return result;
+};
+
+// 4
+// 6
 console.log(
-  identityMatrix([
-    [1, 0, 0],
-    [0, 1, 0],
-    [0, 0, 1],
+  orderBySum([
+    [1, 3],
+    [4, 2],
+    [2, 1],
   ])
 );
