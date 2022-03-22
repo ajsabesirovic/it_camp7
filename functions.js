@@ -125,35 +125,62 @@
 //   ])
 // );
 
-function rowSum(row) {
-  sumRow = 0;
-  for (let i = 0; i < row.length; i++) {
-    sumRow += row[i];
-  }
-  return sumRow;
-}
+// function rowSum(row) {
+//   sumRow = 0;
+//   for (let i = 0; i < row.length; i++) {
+//     sumRow += row[i];
+//   }
+//   return sumRow;
+// }
 
-const orderBySum = (someArray) => {
-  let result = [];
-  for (let i = 0; i < someArray.length; i++) {
-    let min = rowSum(someArray[i]);
-    for (let j = i + 1; j < someArray.length; j++) {
-      let rs = rowSum(someArray[j]);
-      if (rs < min) {
-        min = rs;
-      }
-      result.push(min);
+// const orderBySum = (someArray) => {
+//   let result = [];
+//   for (let i = 0; i < someArray.length; i++) {
+//     let min = rowSum(someArray[i]);
+//     for (let j = i + 1; j < someArray.length; j++) {
+//       let rs = rowSum(someArray[j]);
+//       if (rs < min) {
+//         min = rs;
+//       }
+//       result.push(min);
+//     }
+//   }
+//   return result;
+// };
+
+// console.log(
+//   orderBySum([
+//     [1, 3],
+//     [4, 2],
+//     [2, 1],
+//   ])
+// );
+
+// const findOddOneOut = (someArray) => {
+//   for (let i = 0; i < someArray.length; i++) {
+//     if (someArray[0] !== someArray[1] && someArray[1] === someArray[2]) {
+//       return someArray[0];
+//     } else if (someArray[i] !== someArray[i + 1]) {
+//       return someArray[i + 1];
+//     }
+//   }
+// };
+
+// console.log(findOddOneOut(["b", "a", "a", "a"]));
+
+const splitByOddAndEven = (arr) => {
+  let parni = [];
+  let neparni = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 === 0 && parni.includes(arr[i]) === false) {
+      parni.push(arr[i]);
+    } else if (arr[i] % 2 !== 0 && neparni.includes(arr[i]) === false) {
+      neparni.push(arr[i]);
     }
   }
-  return result;
+  parni.sort((a, b) => a - b);
+  neparni.sort((a, b) => a - b);
+  return [parni, neparni];
 };
 
-// 4
-// 6
-console.log(
-  orderBySum([
-    [1, 3],
-    [4, 2],
-    [2, 1],
-  ])
-);
+console.log(splitByOddAndEven([2, 3, 7, 6, 2, 4, 9]));
