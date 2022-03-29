@@ -168,19 +168,35 @@
 
 // console.log(findOddOneOut(["b", "a", "a", "a"]));
 
-const splitByOddAndEven = (arr) => {
-  let parni = [];
-  let neparni = [];
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] % 2 === 0 && parni.includes(arr[i]) === false) {
-      parni.push(arr[i]);
-    } else if (arr[i] % 2 !== 0 && neparni.includes(arr[i]) === false) {
-      neparni.push(arr[i]);
+// const splitByOddAndEven = (arr) => {
+//   let parni = [];
+//   let neparni = [];
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] % 2 === 0 && parni.includes(arr[i]) === false) {
+//       parni.push(arr[i]);
+//     } else if (arr[i] % 2 !== 0 && neparni.includes(arr[i]) === false) {
+//       neparni.push(arr[i]);
+//     }
+//   }
+//   parni.sort((a, b) => a - b);
+//   neparni.sort((a, b) => a - b);
+//   return [parni, neparni];
+// };
+
+// console.log(splitByOddAndEven([2, 3, 7, 6, 2, 4, 9]));
+
+const mix = (firstArray, secondArray) => {
+  res = [];
+  for (let i = 0; i < firstArray.length + secondArray.length; i++) {
+    if (firstArray[i] !== undefined) {
+      res.push(firstArray[i]);
+    }
+    if (secondArray[i] !== undefined) {
+      res.push(secondArray[i]);
     }
   }
-  parni.sort((a, b) => a - b);
-  neparni.sort((a, b) => a - b);
-  return [parni, neparni];
+  return res;
 };
 
-console.log(splitByOddAndEven([2, 3, 7, 6, 2, 4, 9]));
+console.log(mix([1, 2, 3, 0], [4, 5, 6]));
+console.log(mix(["h", "a", "c"], [7, 4, 17, 10, 48]));
