@@ -185,18 +185,49 @@
 
 // console.log(splitByOddAndEven([2, 3, 7, 6, 2, 4, 9]));
 
-const mix = (firstArray, secondArray) => {
-  res = [];
-  for (let i = 0; i < firstArray.length + secondArray.length; i++) {
-    if (firstArray[i] !== undefined) {
-      res.push(firstArray[i]);
+// const mix = (firstArray, secondArray) => {
+//   res = [];
+//   for (let i = 0; i < firstArray.length + secondArray.length; i++) {
+//     if (firstArray[i] !== undefined) {
+//       res.push(firstArray[i]);
+//     }
+//     if (secondArray[i] !== undefined) {
+//       res.push(secondArray[i]);
+//     }
+//   }
+//   return res;
+// };
+
+// console.log(mix([1, 2, 3, 0], [4, 5, 6]));
+// console.log(mix(["h", "a", "c"], [7, 4, 17, 10, 48]));
+
+// const onlyUnique = (someArray) => {
+//   res = [];
+//   for (let i = 0; i < someArray.length; i++) {
+//     res.push(someArray[i]);
+//     for (let j = 1; j < someArray.length - i; j++) {
+//       if (res.includes(someArray[j + 1]) || res.includes(someArray[j - 1])) {
+//         res.pop();
+//       }
+//     }
+//   }
+//   return res;
+// };
+
+// console.log(onlyUnique([1, 1, 1, 1, 2, 3, 3, 4, 4, 5]));
+
+const onlyUnique = (arr) => {
+  let newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    let ponavlja = 0;
+    for (let j = 0; j < arr.length; j++) {
+      if (arr[j] === arr[i]) ponavlja++;
     }
-    if (secondArray[i] !== undefined) {
-      res.push(secondArray[i]);
+    if (ponavlja === 1) {
+      newArr.push(arr[i]);
     }
   }
-  return res;
+  return newArr;
 };
 
-console.log(mix([1, 2, 3, 0], [4, 5, 6]));
-console.log(mix(["h", "a", "c"], [7, 4, 17, 10, 48]));
+console.log(onlyUnique([1, 2, 3, 3, 4, 4, 5])); // [2, 5]
