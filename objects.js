@@ -154,11 +154,11 @@ const aB = {
 // library.sort((a, b) => b.libraryID - a.libraryID);
 // console.log(library);
 
-let obj1 = {
-  title: "Mockingjay",
-  author: "Suzanne Collins",
-  libraryID: 3245,
-};
+// let obj1 = {
+//   title: "Mockingjay",
+//   author: "Suzanne Collins",
+//   libraryID: 3245,
+// };
 // res = [];
 // for (let i in obj) {
 //   console.log(obj[i]);
@@ -171,12 +171,46 @@ let obj1 = {
 
 // console.log(res);
 
-const check = (property, obj) => {
-  if (obj[property]) {
-    return true;
-  } else {
-    return false;
-  }
-};
+// const check = (property, obj) => {
+//   if (obj[property]) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// };
 
-console.log(check("title", obj1));
+// console.log(check("title", obj1));
+// const arr = [1, 2, 3];
+// const arr2 = arr.slice();
+// console.log(arr2);
+
+const obj2 = new Object();
+
+obj2.name = "ajsa";
+obj2.age = 17;
+
+// console.log(obj1);
+// console.log(obj2);
+// const obj1 = {
+//   name: "ajsa",
+//   age: 17,
+//   lastName: "besirovic",
+// };
+// const arr = Object.entries(obj1);
+// console.log(arr, " arr!");
+// console.log(Object.fromEntries(arr));
+
+// console.log(obj1 === obj2);
+
+// const object1 = {
+//   property1: 42,
+// };
+
+// console.log("!!!!!!!!!!!!!", Object.isFrozen(object1));
+
+// Object.freeze(object1);
+
+// object1.property1 = 23;
+// console.log("--------------------", Object.isFrozen(object1));
+
+// console.log(object1);
