@@ -21,25 +21,34 @@
 
 // console.log(Person.birthYear(pers1));
 
-class Car {
-  constructor(brand, num) {
-    this.carname = brand;
-    this.num = num;
-  }
-  present() {
-    return "I have a " + this.carname + this.num;
-  }
-}
+// class Car {
+//   constructor(brand, num) {
+//     this.carname = brand;
+//     this.num = num;
+//   }
+//   present() {
+//     return "I have a " + this.carname + this.num;
+//   }
+// }
 
-class Model extends Car {
-  constructor(brand, num, mod) {
-    super(brand, num);
-    this.model = mod;
-  }
-  show() {
-    return this.present() + ", it is a " + this.model;
-  }
-}
+// class Model extends Car {
+//   constructor(brand, num, mod) {
+//     super(brand, num);
+//     this.model = mod;
+//   }
+//   show() {
+//     return this.present() + ", it is a " + this.model;
+//   }
+// }
 
-let myCar = new Model("Ford", 22, "Mustang");
-console.log(myCar.show());
+// let myCar = new Model("Ford", 22, "Mustang");
+// console.log(myCar.show());
+
+reversed = (str) => {
+  arr = str.split("");
+  arr.sort();
+  newStr = arr.join("");
+  return newStr;
+};
+
+console.log(reversed("webmaster"));
