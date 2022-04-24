@@ -44,11 +44,22 @@
 // let myCar = new Model("Ford", 22, "Mustang");
 // console.log(myCar.show());
 
-reversed = (str) => {
-  arr = str.split("");
-  arr.sort();
-  newStr = arr.join("");
-  return newStr;
-};
+// reversed = (str) => {
+//   arr = str.split("");
+//   arr.sort();
+//   newStr = arr.join("");
+//   return newStr;
+// };
 
-console.log(reversed("webmaster"));
+// console.log(reversed("webmaster"));
+
+capsLock = (str) => {
+  array1 = str.split(" ");
+  let newarray1 = [];
+
+  for (let i = 0; i < array1.length; i++) {
+    newarray1.push(array1[i][0].toUpperCase() + array1[i].slice(1));
+  }
+  return newarray1.join(" ");
+};
+console.log(capsLock("the quick brown fox"));
