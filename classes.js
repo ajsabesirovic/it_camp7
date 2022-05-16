@@ -65,11 +65,13 @@
 // console.log(capsLock("the quick brown fox"));
 
 // let count = "7";
-// function foo() {
+
+// let count = 1;
+// const foo = () => {
 //   // The function scope
 //   let count = 0;
 //   console.log(count); // logs 0
-// }
+// };
 // foo();
 // console.log(count); // ReferenceError: count is not defined
 
@@ -93,38 +95,71 @@
 //     // the inner scope
 //     console.log(outerVar); // => logs "I am outside!"
 //   };
+
 //   innerFunc();
 // }
 // outerFunc();
 
 // const myGlobal = 0;
+
 // function func() {
 //   const myVar = 1;
 //   console.log(myGlobal);
+
 //   function innerOfFunc() {
 //     const myInnerVar = 2;
 //     console.log(myVar, myGlobal);
+
 //     function innerOfInnerOfFunc() {
 //       console.log(myInnerVar, myVar, myGlobal);
 //     }
+
 //     innerOfInnerOfFunc();
 //   }
 //   innerOfFunc();
 // }
+
 // func();
+
+// const func = () => {
+//   var count = 1;
+//   console.log(count);
+// };
+// func();
+// console.log(count);
+
+// if (true) {
+//   let count = 1;
+//   console.log(count);
+// }
+// console.log(count);
+
+// function outerFunc() {
+//   let outerVar = "I am outside!";
+//   function innerFunc() {
+//     console.log(outerVar); // => logs "I am outside!"
+//   }
+//   // innerFunc()
+//   return innerFunc;
+// }
+
+// function execute() {
+//   const myInnerFunc = outerFunc();
+//   myInnerFunc();
+//   // console.log(myInnerFunc);
+// }
+// execute();
 
 function outerFunc() {
   let outerVar = "I am outside!";
   function innerFunc() {
     console.log(outerVar); // => logs "I am outside!"
   }
-  // innerFunc()
   return innerFunc;
 }
 
-function execute() {
-  const myInnerFunc = outerFunc();
-  myInnerFunc();
-  // console.log(myInnerFunc);
-}
-execute();
+const x = outerFunc();
+x();
+// outerFunc();
+
+// console.log(outerFunc);
