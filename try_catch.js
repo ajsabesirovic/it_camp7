@@ -61,12 +61,22 @@
 
 // console.log(6);
 
-const displayValue = (value) => {
-  console.log(value);
-};
+// const displayValue = (value) => {
+//   console.log(value);
+// };
 
-setInterval(() => {
-  displayValue("interval");
-}, 1000);
+// setInterval(() => {
+//   displayValue("interval");
+// }, 1000);
 
-console.log("CLG");
+// console.log("CLG");
+
+// const func = () => {
+//   const date = new Date();
+//   date.getMinutes() < 10
+//     ? (x = "0" + date.getMinutes())
+//     : (x = date.getMinutes);
+//   console.log(date.getHours() + ":" + x + ":" + date.getSeconds());
+// };
+
+// setInterval(func, 1000);

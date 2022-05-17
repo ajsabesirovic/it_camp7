@@ -74,7 +74,7 @@ const cars = ["Saab", "Volvo", "BMW"];
 
 // console.log(nums[0]);
 
-const fruits = ["Banana", "Orange", "Apple", "Mango"];
+// const fruits = ["Banana", "Orange", "Apple", "Mango"];
 
 // for (let i = 0; i < fruits.length; i++) {
 //   console.log(fruits[i]);
@@ -86,3 +86,26 @@ const fruits = ["Banana", "Orange", "Apple", "Mango"];
 
 // fruits.splice(1, 2);
 // console.log(fruits);
+
+// const array1 = [1, 4, 9, 16];
+
+// // pass a function to map
+// const array2 = array1.map((i) => i * 2);
+
+// console.log(array2);
+const arr = ["john", "JACOB", "jinGleHeimer", "schmidt"];
+const array1 = arr.map(
+  // (i) => i.charAt(0).toUpperCase() + i.slice(1).toLowerCase()
+  //   (i) => {
+  //     for (let j = 1; j < arr[j].length; j++) {
+  //       (i) => {
+  //         arr.map((el) => (el = el.replace(el[j], el[j].toLowerCase())));
+  //       };
+  //     }
+  //   }
+  // );
+
+  arr.map((el) => (el = el.replace(el[0], el[0].toUpperCase())))
+);
+
+console.log(array1);
