@@ -36,16 +36,65 @@
 // // 0 + 1 + 2 + 3 + 4
 // const initialValue = 100;
 // const sumWithInitial = array1.reduce(
-//   (previousValue, currentValue) => previousValue + currentValue
-//   // initialValue
+//   function(previousValue, currentValue) { previousValue + currentValue},
+//   initialValue
 // );
 
 // console.log(sumWithInitial);
-let flattened = [
-  [0, 1],
-  [2, 3],
-  [4, 5],
-].reduce(
-  (previousValue, currentValue) => previousValue.concat(currentValue),
-  []
-);
+// let flattened = [
+//   [0, 1],
+//   [2, 3],
+//   [4, 5],
+// ].reduce(
+//   (previousValue, currentValue) => previousValue.concat(currentValue),
+//   []
+// );
+
+// const names = ["Alice", "Bob", "Tiff", "Bruce", "Alice"];
+// let obj = {};
+// const repeatedNames = names.reduce(
+//   (names_, name) => {
+//     if (name in names_) {
+//       obj[name] += 1;
+//     } else {
+//       obj[name] = 1;
+//     }
+//     return obj;
+//   },
+
+//   obj
+// );
+
+// console.log(repeatedNames);
+// const names = ["Alice", "Bob", "Tiff", "Bruce", "Alice"];
+// let obj = {};
+// const repeatedNames = names.reduce((names_, name, index, array) => {
+//   if (!(array[0] in obj)) {
+//     obj[array[0]] = 1;
+//   }
+//   if (name in obj) {
+//     obj[name] += 1;
+//   } else {
+//     obj[name] = 1;
+//   }
+//   return obj;
+// });
+
+// console.log(repeatedNames);
+
+const people = [
+  { name: "Alice", age: 21 },
+  { name: "Max", age: 20 },
+  { name: "Jane", age: 20 },
+];
+let initialVal = {};
+const godine = people.reduce((previousValue, currentValue) => {
+  if (currentValue["age"] in initialVal) {
+    initialVal[currentValue["age"]].push(currentValue);
+  } else {
+    initialVal[currentValue["age"]] = [currentValue];
+  }
+  return initialVal;
+}, initialVal);
+
+console.log(initialVal);
