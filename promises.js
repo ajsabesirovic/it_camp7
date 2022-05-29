@@ -82,19 +82,80 @@
 
 // console.log(repeatedNames);
 
-const people = [
-  { name: "Alice", age: 21 },
-  { name: "Max", age: 20 },
-  { name: "Jane", age: 20 },
-];
-let initialVal = {};
-const godine = people.reduce((previousValue, currentValue) => {
-  if (currentValue["age"] in initialVal) {
-    initialVal[currentValue["age"]].push(currentValue);
-  } else {
-    initialVal[currentValue["age"]] = [currentValue];
-  }
-  return initialVal;
-}, initialVal);
+// const people = [
+//   { name: "Alice", age: 21 },
+//   { name: "Max", age: 20 },
+//   { name: "Jane", age: 20 },
+// ];
+// let initialVal = {};
+// const godine = people.reduce((previousValue, currentValue) => {
+//   if (currentValue["age"] in initialVal) {
+//     initialVal[currentValue["age"]].push(currentValue);
+//   } else {
+//     initialVal[currentValue["age"]] = [currentValue];
+//   }
+//   return initialVal;
+// }, initialVal);
 
-console.log(initialVal);
+// console.log(initialVal);
+
+// const friends = [
+//   {
+//     name: "Anna",
+//     books: ["Bible", "Harry Potter"],
+//     age: 21,
+//   },
+//   {
+//     name: "Bob",
+//     books: ["War and peace", "Romeo and Juliet"],
+//     age: 26,
+//   },
+//   {
+//     name: "Alice",
+//     books: ["The Lord of the Rings", "The Shining"],
+//     age: 18,
+//   },
+// ];
+
+// let initialValue = ["Alphabet"];
+// const books1 = friends.reduce((previousValue, currentValue) => {
+//   // return previousValue.concat(currentValue["books"]);
+//   return [...previousValue, ...currentValue.books];
+// }, initialValue);
+// console.log(books1);
+
+// const a = [1, 2, 3];
+// const c = [4, 4];
+// const b = [...a, ...c];
+// console.log(b);
+
+// const obj = {
+//   name: "ajsa",
+//   age: 17,
+// };
+// const { age } = obj;
+
+// console.log(age);
+
+// const myArray = ["a", "b", "a", "b", "c", "e", "e", "c", "d", "d", "d", "d"];
+
+// const arr = myArray.reduce((previousValue, currentValue) => {
+//   if (!previousValue.includes(currentValue)) {
+//     return previousValue.concat(currentValue);
+//   }
+//   return previousValue;
+// }, []);
+// console.log(arr);
+
+// ==========
+
+const array = [-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+
+const res = array.filter((el) => {
+  for (i = 2; i < el; i++) {
+    if (el % i == 0) return false;
+  }
+  if (el > 0) return true;
+});
+
+console.log(res);
