@@ -1,0 +1,23 @@
+{
+  "name": "it-camp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "array_methods.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ajsabesirovic/it_camp7.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ajsabesirovic/it_camp7/issues"
+  },
+  "homepage": "https://github.com/ajsabesirovic/it_camp7#readme",
+  "dependencies": {
+    "node-fetch": "^3.2.5"
+  }
+}

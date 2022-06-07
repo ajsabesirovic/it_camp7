@@ -149,13 +149,65 @@
 
 // ==========
 
-const array = [-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+// const array = [-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
 
-const res = array.filter((el) => {
-  for (i = 2; i < el; i++) {
-    if (el % i == 0) return false;
-  }
-  if (el > 0) return true;
-});
+// const res = array.filter((el) => {
+//   for (i = 2; i < el; i++) {
+//     if (el % i == 0) return false;
+//   }
+//   if (el > 0) return true;
+// });
 
-console.log(res);
+// console.log(res);
+
+// const poslePosla = (arg1) => {
+//   console.log("ispis vrednosti", arg1);
+// };
+
+// function mainF(callBack) {
+//   let a = undefined;
+//   for (let i = 0; i < 900000000; i++) {}
+//   callBack(a);
+// }
+
+// mainF(poslePosla);
+
+// myProm = new Promise((res, rej) => {
+//   done = " ";
+
+//   for (let i = 0; i < 900000000; i++) {}
+
+//   if (done) {
+//     res(["Burger", "pomfrit", "cola"]);
+//   } else {
+//     rej("Nema sastojaka");
+//   }
+// });
+
+// myProm
+//   .then((val) => {
+//     console.log("jedem hranu", val);
+//   })
+//   .then(() => {
+//     console.log("sledeci posao");
+//   })
+//   .catch((err) => {
+//     console.log("izlazim iz lokala", err);
+//   });
+
+// import fetch from "node-fetch";
+
+// fetch("https://catfact.ninja/fact")
+//   .then((result) => {
+//     return result.json();
+//   })
+//   .then((resObj) => {
+//     console.log(resObj.fact);
+//     console.log(resObj.length);
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
+
+// console.log("asdsadsadsadsa");
+
