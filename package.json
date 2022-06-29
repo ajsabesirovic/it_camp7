@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/ajsabesirovic/it_camp7#readme",
   "dependencies": {
+    "auto-curry": "^0.2.1",
+    "lodash": "^4.17.21",
     "node-fetch": "^3.2.5"
   }
 }

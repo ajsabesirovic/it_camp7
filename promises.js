@@ -1,6 +1,6 @@
 // const promise = new Promise((resolve, reject) => {
-//   let a = 4;
-//   if (a === 9) {
+//   let a = 5;
+//   if (a === 5) {
 //     resolve("SUCCESS");
 //   } else {
 //     reject("REJECTED");
@@ -10,26 +10,18 @@
 //   .then((message) => console.log("this is in the THEN block " + message))
 //   .catch((message) => console.log("this is in the CATCH block " + message));
 
-// const promise1 = new Promise((resolve) => resolve("Promise 1"));
-// const promise2 = new Promise((resolve) => resolve("Promise 2"));
-// const promise3 = new Promise((resolve) => resolve("Promise 3"));
+// const promise1 = new Promise((resolve, reject) => resolve("Promise 1"));
+// const promise2 = new Promise((resolve, reject) => resolve("Promise 2"));
+// const promise3 = new Promise((resolve, reject) => resolve("Promise 3"));
 
-// Promise.all([promise1, promise2, promise3]).then((messages) =>
-//   console.log(messages)
-// );
+// Promise.all([promise1, promise2, promise3])
+//   .then((messages) => console.log(messages))
+//   .catch((messages) => {
+//     console.log(messages);
+//   });
 // Promise.race([promise1, promise2, promise3]).then((message) =>
 //   console.log(message)
 // );
-
-// console.log("hi");
-// setTimeout(() => {
-//   console.log("setTimeout");
-// }, 3000);
-// setTimeout(() => {
-//   console.log("setTimeout1");
-// }, 1000);
-
-// console.log("hi2");
 
 // const array1 = [1, 2, 3, 4];
 
@@ -172,42 +164,167 @@
 
 // mainF(poslePosla);
 
-// myProm = new Promise((res, rej) => {
-//   done = " ";
+// const myProm = new Promise((res, rej) => {
+import fetch from "node-fetch";
 
-//   for (let i = 0; i < 900000000; i++) {}
-
-//   if (done) {
-//     res(["Burger", "pomfrit", "cola"]);
-//   } else {
-//     rej("Nema sastojaka");
-//   }
-// });
-
-// myProm
-//   .then((val) => {
-//     console.log("jedem hranu", val);
-//   })
-//   .then(() => {
-//     console.log("sledeci posao");
-//   })
-//   .catch((err) => {
-//     console.log("izlazim iz lokala", err);
-//   });
-
-// import fetch from "node-fetch";
-
-// fetch("https://catfact.ninja/fact")
-//   .then((result) => {
-//     return result.json();
-//   })
-//   .then((resObj) => {
-//     console.log(resObj.fact);
-//     console.log(resObj.length);
-//   })
-//   .catch((err) => {
-//     console.log(err);
-//   });
+fetch("https://catfact.ninja/fact")
+  .then((result) => {
+    console.log(result);
+    return result.json();
+  })
+  .then((resObj) => {
+    console.log(resObj.fact);
+    console.log(resObj.length);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 
 // console.log("asdsadsadsadsa");
 
+// function resolve(value, milliseconds) {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => resolve(value), milliseconds);
+//   });
+// }
+// function reject(reason, milliseconds) {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => reject(reason), milliseconds);
+//   });
+// }
+
+// Promise.race([
+//   reject(new Error("bad error!"), 4000),
+//   resolve(2, 2000),
+//   resolve(222222, 2000),
+// ])
+//   .then((value) => console.log("this is the THEN block", value)) // does not print anything
+//   .catch((error) => console.log("this is the CATCH", error.message));
+// const err = new Error("petar");
+// console.log(err.message);
+
+// const myFunc = async (url) => {
+//   const res = await fetch(url)
+//     .then((result) => {
+//       return result.json();
+//     })
+//     .then((resObj) => {
+//       console.log(resObj.fact);
+//       console.log(resObj.length);
+//     })
+//     .catch((err) => {
+//       console.log(err);
+//     });
+//   return res;
+// };
+
+// console.log("=================");
+// myFunc("https://catfact.ninja/fact");
+
+// console.log("==================");
+// const timeout = async (t) => {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => resolve(), t);
+//   });
+// };
+// const arr = [1, 2, 3];
+// const printInOrder = async (asyncFunction, array) => {
+//   await array.reduce(async (asyncFunction, currentValue) => {
+//     await asyncFunction;
+//     console.log(currentValue);
+//   }, undefined);
+//   console.log("Hello");
+// };
+// const sayHello = async () => {
+//   console.log("Hello!");
+// };
+
+// const greeting = async () => {
+//   // Pause the execution of greeting() until sayHello() fulfills
+//   await sayHello();
+//   console.log("How are you?");
+// };
+// greeting();
+
+//     const timeout = async (t) => {
+//       return new Promise((resolve, reject) => {
+//         setTimeout(() => resolve(), t);
+//       });
+//     };
+//     const timeout1 = async (t) => {
+//       return new Promise((resolve, reject) => {
+//         setTimeout(() => reject("123456789"), t);
+//       });
+//     };
+//     const sayHello = async () => {
+//       await timeout(4000);
+//       console.log("Hello!");
+//     };
+//     const greeting = async () => {
+//       await timeout1(1000);
+//       console.log("How are you?");
+//     };
+// const sayHelloAndGreet = async () => {
+//   await sayHello();
+//   greeting();
+// };
+// sayHelloAndGreet()
+// .then(() => console.log("Finished saying hello and greeting!"))
+// .then(() => {
+//   console.log("second then");
+// })
+// .catch((e) => console.log(e));
+
+// function myFunc(a, b) {
+//   console.log(a + b);
+// }
+
+// console.log("hi1");
+// console.log("hi2");
+
+// myFunc(10, 9);
+
+// console.log("hi3");
+
+// console.log("hi1");
+
+// setTimeout(() => {
+//   console.log("setTimeout 1");
+// }, 1000);
+
+// setTimeout(() => {
+//   console.log("setTimeout 2");
+// }, 1000);
+
+// console.log("hi2");
+
+// let a = 13;
+// for (let i = 2; i < a; i++) {
+//   if (a % i === 0) {
+//     console.log(false);
+//   } else {
+//     console.log(true);
+//   }
+// }
+
+// let res = [1, 2, 3].filter((num) => {
+//   return num < 2;
+// });
+// console.log(res);
+
+const niz = [2, 3, 6, 7, 8, 9, 11, 12, 13, 15, 22];
+
+let prime = (el) => {
+  for (let i = 2; i < el; i++) {
+    if (el % i == 0) {
+      return false;
+    }
+  }
+  return true;
+};
+
+let res = niz.filter((el) => {
+  return prime(el);
+});
+
+console.log(res);
